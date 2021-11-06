@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">UCN Phonebook</string>
+  <string name="acra_dialog_tittle">Se cayo !!</string>
+  <string name="acra_dialog_comment">Lo siento, la aplicación presenta dificultades./n Por favor envíe un reporte a los desarrolladores./n Puede agregar un comentario acá.</string>
+  <string name="app_title">Directorio UCN</string>
+  <string name="app_subtitle">Universidad Católica del Norte</string>
+</resources>
