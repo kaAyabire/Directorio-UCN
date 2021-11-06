@@ -16,14 +16,36 @@ android {
     }
 
     buildTypes {
+        // Modo: Producción
         release {
-            minifyEnabled false
+            debuggable false
+            minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
+            crunchPngs true
+            versionNameSuffix ".r"
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        // Modo: Desarrollo
+        debug {
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
+            zipAlignEnabled false
+            crunchPngs false
+            versionNameSuffix ".d"
         }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            output.versionCodeOverride = project.ext.buildTimestamp
+            output.versionNameOverride = project.ext.buildVersion + (variant == "debug" ? ".d" : ".r")
+        }
     }
 }
 

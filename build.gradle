@@ -25,6 +25,12 @@ buildscript {
     }
 }
 
+allprojects {
+    ext.buildTimestamp = BUILD_TIMESTAMP
+    ext.buildVersion = BUILD_VERSION
+    logger.lifecycle("Compiling version: ${BUILD_VERSION} with timestamp: ${BUILD_TIMESTAMP}.")
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
