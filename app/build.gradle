@@ -4,6 +4,7 @@ plugins {
 
 android {
     compileSdk 31
+    buildToolsVersion '31.0.0'
 
     defaultConfig {
         applicationId "cl.ucn.disc.dsm.kayabire.directorio"
@@ -64,10 +65,17 @@ dependencies {
     // debugImplementation because LeakCanary should only run in debug builds.
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'
 
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+
     // ACRA Stuff
     implementation("ch.acra:acra-mail:5.8.4")
     implementation("ch.acra:acra-dialog:5.8.4")
     //implementation("ch.acra:acra-notification:5.8.4")
     //implementation("ch.acra:acra-toast:5.8.4")
+
+    // https://mvnrepository.com/artifact/com.google.code.gson/gson
+    implementation 'com.google.code.gson:gson:2.8.8'
 
 }
